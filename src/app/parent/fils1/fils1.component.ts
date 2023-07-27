@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-fils1',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./fils1.component.css']
 })
 export class Fils1Component {
+  @Input() message:string = "";
 
 }
