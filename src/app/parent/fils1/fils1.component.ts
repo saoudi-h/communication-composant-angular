@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Voiture } from 'src/app/shared/voiture.model';
 
 @Component({
@@ -7,6 +7,15 @@ import { Voiture } from 'src/app/shared/voiture.model';
   styleUrls: ['./fils1.component.css'],
 })
 export class Fils1Component {
-  @Input() message: string = '';
-  @Input('attr-voiture') voiture: Voiture = new Voiture('', '');
+  @Input() voitures: Voiture[] = [];
+  @Output() voitureEmitter:EventEmitter<Voiture> = new EventEmitter<Voiture>();
+  formModel: string = '';
+  formMarque: string = '';
+
+  addCar() {
+    if (this.formModel !== '' && this.formMarque !== ''){
+      console.log(this.formMarque)
+      this.voitureEmitter.emit(new Voiture(this.formModel, this.formMarque));
+    }
+  }
 }
