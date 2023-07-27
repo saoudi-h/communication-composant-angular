@@ -3,6 +3,6 @@
     <app-fils1 [message]="'Bienvenue a la formation angular'" [attr-voiture]="voiture"></app-fils1>
   </div>
   <div class="col-sm-6">
-    <app-fils2 [pilote]="pilote"></app-fils2>
+    <app-fils2 [pilote]="pilote" (newCar)="addCar($event)"></app-fils2>
   </div>
 </div>

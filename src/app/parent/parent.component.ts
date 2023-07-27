@@ -11,4 +11,8 @@ export class ParentComponent {
   messageDuParent:string="Bienvenue a la formation angular";
   voiture:Voiture = new Voiture("404","Peugeot");
   pilote:Pilote = new Pilote("jean","dujardin","oss");
+  
+  addCar(voiture:Voiture){
+    console.log(voiture);
+  }
 }
